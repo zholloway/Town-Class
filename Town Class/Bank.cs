@@ -10,7 +10,7 @@ namespace Town_Class
     {
         public string Name { get; set; }
 
-        public string BuildingType { get; set; }
+        public string BuildingType { get; set; } // to be set in the constructor
 
         public int NumberOfRooms { get; set; }
 
@@ -66,6 +66,11 @@ namespace Town_Class
         public void WithdrawMoney(double withdrawAmount)
         {
             this.AmountOfMoney -= withdrawAmount;
+        }
+
+        public Bank()
+        {
+            this.BuildingType = "Bank";
         }
     }
 }
