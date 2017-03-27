@@ -21,6 +21,8 @@ namespace Town_Class
             allTheHouses.Add(house2);
             allTheHouses.Add(house3);
 
+            //house examples
+
             //create banks
             var allTheBanks = new List<Bank>();
 
@@ -29,6 +31,8 @@ namespace Town_Class
 
             allTheBanks.Add(bank1);
             allTheBanks.Add(bank2);
+
+            //bank examples
 
             //create schools
             var allTheSchools = new List<School>();
@@ -39,12 +43,28 @@ namespace Town_Class
             allTheSchools.Add(school1);
             allTheSchools.Add(school2);
 
+            //school examples
+
             //create town
             var town = new Town();
             town.AllTheHouses = allTheHouses;
             town.AllTheBanks = allTheBanks;
             town.AllTheSchools = allTheSchools;
 
+            //create TourGroup
+            var tourGroup = new List<Townsperson>();
+
+            var person1 = new Townsperson("Zack", "Brown", "Green");
+            var person2 = new Townsperson("Jon Luke", "Brown", "Brown");
+            var person3 = new Townsperson("Ashley", "Blonde", "Blue");
+            var person4 = new Townsperson("Caroline", "Black", "Grey");
+
+            tourGroup.Add(person1);
+            tourGroup.Add(person2);
+            tourGroup.Add(person3);
+            tourGroup.Add(person4);
+
+            town.TourGroup = tourGroup;
 
             Console.ReadLine();
         }
