@@ -10,6 +10,7 @@ namespace Town_Class
     {
         static void Main(string[] args)
         {
+            //create houses
             var allTheHouses = new List<House>();
 
             var house1 = House.CreateHouse1();
@@ -37,6 +38,12 @@ namespace Town_Class
 
             allTheSchools.Add(school1);
             allTheSchools.Add(school2);
+
+            //create town
+            var town = new Town();
+            town.AllTheHouses = allTheHouses;
+            town.AllTheBanks = allTheBanks;
+            town.AllTheSchools = allTheSchools;
 
 
             Console.ReadLine();
