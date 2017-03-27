@@ -39,7 +39,21 @@ namespace Town_Class
             /*
                 Put calculations to reduce ratio to lowest numbers here
                 For instance, 9:3 would reduce to 3:1
-            */ 
+            */
+
+            var highestCommonDenominator = 1;
+
+            for (int i = 2; i <= NumberOfTeachers; i++)
+            {
+                if ((NumberOfStudents % i == 0) && (NumberOfTeachers % i == 0))
+                {
+                    highestCommonDenominator = i;
+                }
+            }
+
+            NumberOfStudents /= highestCommonDenominator;
+            NumberOfTeachers /= highestCommonDenominator;
+
             return $"{NumberOfTeachers}: {NumberOfStudents}";
         }
 
