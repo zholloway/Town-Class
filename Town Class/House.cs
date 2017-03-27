@@ -91,5 +91,89 @@ namespace Town_Class
         {
             this.BuildingType = "House";
         }
+
+        public static House CreateHouse1()
+        {
+            var house1 = new House
+            {
+                Name = "Home",
+                NumberOfRooms = 7,
+                ConstructionMaterial = "Wood",
+                Height = 15,
+                Width = 400,
+                Length = 800,
+                NumberOfBathrooms = 2,
+                NumberOfBedrooms = 3,
+                NumberOfFloors = 1,
+                Address1 = "7514 Lake Josephine Lane",
+                Address2 = "",
+                City = "Odessa",
+                State = "Florida",
+                Zip = "33556"
+            };
+
+            house1.CalculateSquareFootage(house1.Width, house1.Length, house1.NumberOfFloors);
+            house1.CalculateVolume(house1.Height, house1.Width, house1.Length);
+            house1.SetNumberOfOccupants(3);
+            house1.AssembleFullAddress(house1.Address1, house1.Address2, house1.City, house1.State, house1.Zip);
+
+            return house1;
+        }
+
+        public static House CreateHouse2()
+        {
+            var house2 = new House
+            {
+                Name = "Blue House",
+                NumberOfRooms = 10,
+                ConstructionMaterial = "Concrete",
+                Height = 30,
+                Width = 700,
+                Length = 1000,
+                NumberOfBathrooms = 4,
+                NumberOfBedrooms = 5,
+                NumberOfFloors = 2,
+                Address1 = "123 Easy Street",
+                Address2 = "",
+                City = "Tampa",
+                State = "Florida",
+                Zip = "32987"
+            };
+
+            house2.CalculateSquareFootage(house2.Width, house2.Length, house2.NumberOfFloors);
+            house2.CalculateVolume(house2.Height, house2.Width, house2.Length);
+            house2.SetNumberOfOccupants(3);
+            house2.AssembleFullAddress(house2.Address1, house2.Address2, house2.City, house2.State, house2.Zip);
+
+            return house2;
+        }
+
+        public static House CreateHouse3()
+        {
+            var house3 = new House
+            {
+                Name = "Red House",
+                NumberOfRooms = 2,
+                ConstructionMaterial = "Wood",
+                Height = 15,
+                Width = 100,
+                Length = 400,
+                NumberOfBathrooms = 1,
+                NumberOfBedrooms = 1,
+                NumberOfFloors = 1,
+                Address1 = "321 Someone Help Me Way",
+                Address2 = "Apartment 306",
+                City = "St. Petersburg",
+                State = "Florida",
+                Zip = "21908"
+            };
+
+            house3.CalculateSquareFootage(house3.Width, house3.Length, house3.NumberOfFloors);
+            house3.CalculateVolume(house3.Height, house3.Width, house3.Length);
+            house3.SetNumberOfOccupants(3);
+            house3.AssembleFullAddress(house3.Address1, house3.Address2, house3.City, house3.State, house3.Zip);
+
+            return house3;
+        }
     }
 }

@@ -97,9 +97,10 @@ namespace Town_Class
             this.AmountOfMoney -= withdrawAmount;
         }
 
-        public Bank()
+        public Bank(int money)
         {
             this.BuildingType = "Bank";
+            this.AmountOfMoney = money;
         }
     }
 }
