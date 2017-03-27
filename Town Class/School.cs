@@ -122,5 +122,59 @@ namespace Town_Class
             this.NumberOfTeachers = numberOfTeachers;
             this.NumberOfStudents = numberOfStudents;
         }
+
+        public static School CreateSchool1(int numberOfTeachers, int numberOfStudents)
+        {
+            var school = new School(numberOfTeachers, numberOfStudents)
+            {
+                Name = "Alonso High School",
+                NumberOfRooms = 50,
+                ConstructionMaterial = "Cardboard",
+                Height = 30,
+                Width = 10000,
+                Length = 20000,
+                NumberOfBathrooms = 10,
+                NumberOfFloors = 3,
+                Address1 = "1122 Education Blvd",
+                Address2 = "",
+                City = "Tampa",
+                State = "Florida",
+                Zip = "32323"
+            };
+
+            school.CalculateSquareFootage(school.Width, school.Length, school.NumberOfFloors);
+            school.CalculateVolume(school.Height, school.Width, school.Length);
+            school.SetNumberOfOccupants(numberOfTeachers + numberOfStudents + 10);
+            school.AssembleFullAddress(school.Address1, school.Address2, school.City, school.State, school.Zip);
+
+            return school;
+        }
+
+        public static School CreateSchool2(int numberOfTeachers, int numberOfStudents)
+        {
+            var school = new School(numberOfTeachers, numberOfStudents)
+            {
+                Name = "The Iron Yard",
+                NumberOfRooms = 6,
+                ConstructionMaterial = "Wood",
+                Height = 15,
+                Width = 1000,
+                Length = 2000,
+                NumberOfBathrooms = 2,
+                NumberOfFloors = 1,
+                Address1 = "900 Programming Circle",
+                Address2 = "",
+                City = "St. Petersburg",
+                State = "Florida",
+                Zip = "12309"
+            };
+
+            school.CalculateSquareFootage(school.Width, school.Length, school.NumberOfFloors);
+            school.CalculateVolume(school.Height, school.Width, school.Length);
+            school.SetNumberOfOccupants(numberOfTeachers + numberOfStudents + 3);
+            school.AssembleFullAddress(school.Address1, school.Address2, school.City, school.State, school.Zip);
+
+            return school;
+        }
     }
 }

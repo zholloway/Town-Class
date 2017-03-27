@@ -32,8 +32,8 @@ namespace Town_Class
             //create schools
             var allTheSchools = new List<School>();
 
-            var school1 = School.CreateSchool1();
-            var school2 = School.CreateSchool2();
+            var school1 = School.CreateSchool1(10, 100);
+            var school2 = School.CreateSchool2(3, 42);
 
             allTheSchools.Add(school1);
             allTheSchools.Add(school2);
