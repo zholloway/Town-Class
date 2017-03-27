@@ -142,7 +142,7 @@ namespace Town_Class
 
             house2.CalculateSquareFootage(house2.Width, house2.Length, house2.NumberOfFloors);
             house2.CalculateVolume(house2.Height, house2.Width, house2.Length);
-            house2.SetNumberOfOccupants(3);
+            house2.SetNumberOfOccupants(5);
             house2.AssembleFullAddress(house2.Address1, house2.Address2, house2.City, house2.State, house2.Zip);
 
             return house2;
@@ -170,7 +170,7 @@ namespace Town_Class
 
             house3.CalculateSquareFootage(house3.Width, house3.Length, house3.NumberOfFloors);
             house3.CalculateVolume(house3.Height, house3.Width, house3.Length);
-            house3.SetNumberOfOccupants(3);
+            house3.SetNumberOfOccupants(1);
             house3.AssembleFullAddress(house3.Address1, house3.Address2, house3.City, house3.State, house3.Zip);
 
             return house3;

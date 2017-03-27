@@ -102,5 +102,59 @@ namespace Town_Class
             this.BuildingType = "Bank";
             this.AmountOfMoney = money;
         }
+
+        public static Bank CreateBank1(int money)
+        {
+            var bank1 = new Bank(money)
+            {
+                Name = "5/3 Bank",
+                NumberOfRooms = 15,
+                ConstructionMaterial = "Plastic",
+                Height = 15,
+                Width = 2000,
+                Length = 3000,
+                NumberOfBathrooms = 3,
+                NumberOfFloors = 1,
+                Address1 = "425 Money Street",
+                Address2 = "",
+                City = "Tampa",
+                State = "Florida",
+                Zip = "33556"
+            };
+
+            bank1.CalculateSquareFootage(bank1.Width, bank1.Length, bank1.NumberOfFloors);
+            bank1.CalculateVolume(bank1.Height, bank1.Width, bank1.Length);
+            bank1.SetNumberOfOccupants(11);
+            bank1.AssembleFullAddress(bank1.Address1, bank1.Address2, bank1.City, bank1.State, bank1.Zip);
+
+            return bank1;
+        }
+
+        public static Bank CreateBank2(int money)
+        {
+            var bank1 = new Bank(money)
+            {
+                Name = "Bank Of America",
+                NumberOfRooms = 10,
+                ConstructionMaterial = "Cardboard",
+                Height = 30,
+                Width = 1000,
+                Length = 2000,
+                NumberOfBathrooms = 11,
+                NumberOfFloors = 2,
+                Address1 = "630 Banker Ave",
+                Address2 = "",
+                City = "Odessa",
+                State = "Florida",
+                Zip = "33556"
+            };
+
+            bank1.CalculateSquareFootage(bank1.Width, bank1.Length, bank1.NumberOfFloors);
+            bank1.CalculateVolume(bank1.Height, bank1.Width, bank1.Length);
+            bank1.SetNumberOfOccupants(30);
+            bank1.AssembleFullAddress(bank1.Address1, bank1.Address2, bank1.City, bank1.State, bank1.Zip);
+
+            return bank1;
+        }
     }
 }

@@ -116,9 +116,11 @@ namespace Town_Class
                 }
             }
 
-        public School()
+        public School(int numberOfTeachers, int numberOfStudents)
         {
             this.BuildingType = "School";
+            this.NumberOfTeachers = numberOfTeachers;
+            this.NumberOfStudents = numberOfStudents;
         }
     }
 }

@@ -10,10 +10,33 @@ namespace Town_Class
     {
         static void Main(string[] args)
         {
+            var allTheHouses = new List<House>();
+
             var house1 = House.CreateHouse1();
             var house2 = House.CreateHouse2();
             var house3 = House.CreateHouse3();
 
+            allTheHouses.Add(house1);
+            allTheHouses.Add(house2);
+            allTheHouses.Add(house3);
+
+            //create banks
+            var allTheBanks = new List<Bank>();
+
+            var bank1 = Bank.CreateBank1(250000);
+            var bank2 = Bank.CreateBank2(1000000);
+
+            allTheBanks.Add(bank1);
+            allTheBanks.Add(bank2);
+
+            //create schools
+            var allTheSchools = new List<School>();
+
+            var school1 = School.CreateSchool1();
+            var school2 = School.CreateSchool2();
+
+            allTheSchools.Add(school1);
+            allTheSchools.Add(school2);
 
 
             Console.ReadLine();
