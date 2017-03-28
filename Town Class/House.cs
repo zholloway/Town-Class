@@ -65,27 +65,48 @@ namespace Town_Class
                 this._fullAddress = Address1 + " " + Address2 + " " + City + ", " + State + " " + Zip;
             }
 
-        private int _currentOccupants;
+        private List<Townsperson> _currentOccupants = new List<Townsperson>();
 
-            public int CurrentOccupants { get { return _currentOccupants; } } // read only
+                public string CurrentOccupants {
+                    get
+                    {
+                        var nameList = "";
+                        foreach (var person in _currentOccupants)
+                        {
+                            nameList += (person.Name + " ");
+                        }
+                        return nameList;
+                    }
+                
+                } // read only
 
-            public int IncrementOccupants()
-            {
-                return this._currentOccupants++;
-            }
-
-            public int DecreaseOccupants()
-            {
-                return this._currentOccupants--;
-            }
-
-            public void SetNumberOfOccupants (int number)
-            {
-                for (int i = 0; i < number; i++)
+                public void IncrementOccupants(List<Townsperson>tourGroup)
                 {
-                    this._currentOccupants++;
+                    foreach (var person in tourGroup)
+                    {
+                        this._currentOccupants.Add(person);
+                    }
                 }
+
+                public void DecreaseOccupants(List<Townsperson>tourGroup)
+                {
+                    foreach (var person in tourGroup)
+                    {
+                        this._currentOccupants.Remove(person);
+                    }
+                }
+
+        /*
+        public void SetNumberOfOccupants (int number)
+        {
+            for (int i = 0; i < number; i++)
+            {
+                this._currentOccupants++;
             }
+        }
+        */
+
+
 
         public House()
         {
@@ -114,7 +135,7 @@ namespace Town_Class
 
             house1.CalculateSquareFootage(house1.Width, house1.Length, house1.NumberOfFloors);
             house1.CalculateVolume(house1.Height, house1.Width, house1.Length);
-            house1.SetNumberOfOccupants(3);
+            //house1.SetNumberOfOccupants(3);
             house1.AssembleFullAddress(house1.Address1, house1.Address2, house1.City, house1.State, house1.Zip);
 
             return house1;
@@ -142,7 +163,7 @@ namespace Town_Class
 
             house2.CalculateSquareFootage(house2.Width, house2.Length, house2.NumberOfFloors);
             house2.CalculateVolume(house2.Height, house2.Width, house2.Length);
-            house2.SetNumberOfOccupants(5);
+            //house2.SetNumberOfOccupants(5);
             house2.AssembleFullAddress(house2.Address1, house2.Address2, house2.City, house2.State, house2.Zip);
 
             return house2;
@@ -170,7 +191,7 @@ namespace Town_Class
 
             house3.CalculateSquareFootage(house3.Width, house3.Length, house3.NumberOfFloors);
             house3.CalculateVolume(house3.Height, house3.Width, house3.Length);
-            house3.SetNumberOfOccupants(1);
+            //house3.SetNumberOfOccupants(1);
             house3.AssembleFullAddress(house3.Address1, house3.Address2, house3.City, house3.State, house3.Zip);
 
             return house3;

@@ -94,27 +94,47 @@ namespace Town_Class
                 this._fullAddress = Address1 + " " + Address2 + " " + City + ", " + State + " " + Zip;
             }
 
-        private int _currentOccupants;
+        private List<Townsperson> _currentOccupants = new List<Townsperson>();
 
-            public int CurrentOccupants { get { return _currentOccupants; } } // read only
-
-            public int IncrementOccupants()
+            public string CurrentOccupants
             {
-                return this._currentOccupants++;
-            }
-
-            public int DecreaseOccupants()
-            {
-                return this._currentOccupants--;
-            }
-
-            public void SetNumberOfOccupants(int number)
-            {
-                for (int i = 0; i < number; i++)
+                get
                 {
-                    this._currentOccupants++;
+                    var nameList = "";
+                    foreach (var person in _currentOccupants)
+                    {
+                        nameList += (person.Name + " ");
+                    }
+                    return nameList;
+                }
+
+            } // read only
+
+        public void IncrementOccupants(List<Townsperson> tourGroup)
+            {
+                foreach (var person in tourGroup)
+                {
+                    _currentOccupants.Add(person);
                 }
             }
+
+            public void DecreaseOccupants(List<Townsperson> tourGroup)
+            {
+                foreach (var person in tourGroup)
+                {
+                    _currentOccupants.Remove(person);
+                }
+            }
+
+        /*
+        public void SetNumberOfOccupants (int number)
+        {
+            for (int i = 0; i < number; i++)
+            {
+                this._currentOccupants++;
+            }
+        }
+        */
 
         public School(int numberOfTeachers, int numberOfStudents)
         {
@@ -144,7 +164,7 @@ namespace Town_Class
 
             school.CalculateSquareFootage(school.Width, school.Length, school.NumberOfFloors);
             school.CalculateVolume(school.Height, school.Width, school.Length);
-            school.SetNumberOfOccupants(numberOfTeachers + numberOfStudents + 10);
+            //school.SetNumberOfOccupants(numberOfTeachers + numberOfStudents + 10);
             school.AssembleFullAddress(school.Address1, school.Address2, school.City, school.State, school.Zip);
 
             return school;
@@ -171,7 +191,7 @@ namespace Town_Class
 
             school.CalculateSquareFootage(school.Width, school.Length, school.NumberOfFloors);
             school.CalculateVolume(school.Height, school.Width, school.Length);
-            school.SetNumberOfOccupants(numberOfTeachers + numberOfStudents + 3);
+            //school.SetNumberOfOccupants(numberOfTeachers + numberOfStudents + 3);
             school.AssembleFullAddress(school.Address1, school.Address2, school.City, school.State, school.Zip);
 
             return school;

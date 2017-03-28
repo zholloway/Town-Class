@@ -63,39 +63,59 @@ namespace Town_Class
                 this._fullAddress = Address1 + " " + Address2 + " " + City + ", " + State + " " + Zip;
             }
 
-        private int _currentOccupants;
+        private List<Townsperson> _currentOccupants = new List<Townsperson>();
 
-            public int CurrentOccupants { get { return _currentOccupants; } } // read only
-
-            public int IncrementOccupants()
+            public string CurrentOccupants
             {
-                return this._currentOccupants++;
+                get
+                {
+                    var nameList = "";
+                    foreach (var person in _currentOccupants)
+                    {
+                        nameList += (person.Name + " ");
+                    }
+                    return nameList;
+                }
+
+            } // read only
+
+            public void IncrementOccupants(List<Townsperson> tourGroup)
+            {
+                foreach (var person in tourGroup)
+                {
+                    _currentOccupants.Add(person);
+                }
             }
 
-            public int DecreaseOccupants()
+            public void DecreaseOccupants(List<Townsperson> tourGroup)
             {
-                return this._currentOccupants--;
+                foreach (var person in tourGroup)
+                {
+                    _currentOccupants.Remove(person);
+                }
             }
 
-            public void SetNumberOfOccupants(int number)
+            /*
+            public void SetNumberOfOccupants (int number)
             {
                 for (int i = 0; i < number; i++)
                 {
                     this._currentOccupants++;
                 }
             }
+            */
 
         private double AmountOfMoney { get; set; }
 
-        public void DepositMoney (double depositAmount)
-        {
-            this.AmountOfMoney += depositAmount;
-        }
+            public void DepositMoney (double depositAmount)
+            {
+                this.AmountOfMoney += depositAmount;
+            }
 
-        public void WithdrawMoney(double withdrawAmount)
-        {
-            this.AmountOfMoney -= withdrawAmount;
-        }
+            public void WithdrawMoney(double withdrawAmount)
+            {
+                this.AmountOfMoney -= withdrawAmount;
+            }
 
         public Bank(int money)
         {
@@ -124,7 +144,7 @@ namespace Town_Class
 
             bank1.CalculateSquareFootage(bank1.Width, bank1.Length, bank1.NumberOfFloors);
             bank1.CalculateVolume(bank1.Height, bank1.Width, bank1.Length);
-            bank1.SetNumberOfOccupants(11);
+            //bank1.SetNumberOfOccupants(11);
             bank1.AssembleFullAddress(bank1.Address1, bank1.Address2, bank1.City, bank1.State, bank1.Zip);
 
             return bank1;
@@ -151,7 +171,7 @@ namespace Town_Class
 
             bank1.CalculateSquareFootage(bank1.Width, bank1.Length, bank1.NumberOfFloors);
             bank1.CalculateVolume(bank1.Height, bank1.Width, bank1.Length);
-            bank1.SetNumberOfOccupants(30);
+            //bank1.SetNumberOfOccupants(30);
             bank1.AssembleFullAddress(bank1.Address1, bank1.Address2, bank1.City, bank1.State, bank1.Zip);
 
             return bank1;

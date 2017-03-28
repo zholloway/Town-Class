@@ -55,7 +55,7 @@ namespace Town_Class
             var tourGroup = new List<Townsperson>();
 
             var person1 = new Townsperson("Zack", "Brown", "Green");
-            var person2 = new Townsperson("Jon Luke", "Brown", "Brown");
+            var person2 = new Townsperson("JonLuke", "Brown", "Brown");
             var person3 = new Townsperson("Ashley", "Blonde", "Blue");
             var person4 = new Townsperson("Caroline", "Black", "Grey");
 
@@ -65,6 +65,12 @@ namespace Town_Class
             tourGroup.Add(person4);
 
             town.TourGroup = tourGroup;
+
+            town.MoveTourGroupToHouse(house2.Name);
+            Console.WriteLine($"The occupants of {house2.Name} are {house2.CurrentOccupants}.");
+
+            town.MoveTourGroupFromHouseToBank(house2.Name, bank1.Name);
+            Console.WriteLine($"The occupants of {bank1.Name} are {bank1.CurrentOccupants}.");
 
             Console.ReadLine();
         }
