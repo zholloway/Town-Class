@@ -1,0 +1,6 @@
+c:\users\zack holloway\documents\visual studio 2017\Projects\Town Class\Town Class\bin\Debug\Town Class.exe.config
+c:\users\zack holloway\documents\visual studio 2017\Projects\Town Class\Town Class\bin\Debug\Town Class.exe
+c:\users\zack holloway\documents\visual studio 2017\Projects\Town Class\Town Class\bin\Debug\Town Class.pdb
+c:\users\zack holloway\documents\visual studio 2017\Projects\Town Class\Town Class\obj\Debug\Town Class.csprojResolveAssemblyReference.cache
+c:\users\zack holloway\documents\visual studio 2017\Projects\Town Class\Town Class\obj\Debug\Town Class.exe
+c:\users\zack holloway\documents\visual studio 2017\Projects\Town Class\Town Class\obj\Debug\Town Class.pdb
