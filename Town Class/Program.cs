@@ -66,6 +66,7 @@ namespace Town_Class
 
             town.TourGroup = tourGroup;
 
+            //move TourGroup around buildings
             town.MoveTourGroupToHouse(house2.Name);
             Console.WriteLine($"The occupants of {house2.Name} are {house2.CurrentOccupants}.");
 
